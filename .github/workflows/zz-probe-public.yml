@@ -1,0 +1,13 @@
+name: zz-probe-public
+on:
+  schedule:
+    - cron: '* * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: echo "public probe alive $(date -u +%FT%TZ)"
